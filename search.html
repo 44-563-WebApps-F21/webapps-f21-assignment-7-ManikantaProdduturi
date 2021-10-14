@@ -17,22 +17,17 @@
         h1 {
             background-color: rgb(160, 55, 125);
         }
-
-
         .default-color {
             color: rgb(17, 138, 168);
         }
-
         .hover:hover {
             color: white;
             background-color: #82cf05 !important;
         }
-
         img {
             cursor: pointer;
             background-color: rgb(49, 137, 172)
         }
-
     </style>
     <script>
         var ids = [];
@@ -42,7 +37,6 @@
         for (var i = 0; i < 24; i++) {
             ids.push("img-" + i)
         }
-
         function reset() {
             triesCount = 0;
             animalLocation = Math.round(Math.random() * (23 - 0) + 0);
@@ -55,7 +49,6 @@
                 else
                 document.getElementById(ids[i]).src = "plant.jpg";
             }
-
         }
         function check(index) {
             let id = ids[index];
@@ -64,8 +57,6 @@
             } else {
                 document.getElementById(id).src = "empty hole.jpg";
             }
-
-
             triesCount++;
             document.getElementById("tries").innerHTML = "Number of triesis " + triesCount;
             distanceOfAnimal = distance(index, animalLocation);
@@ -91,11 +82,20 @@
                     verticalDist = verticalDist + 1;
                 }
             }
-
             return Math.max(verticalDist, horizantalDist);
         }
 
-
+        function newgame() {
+            triesCount = 0;
+            animalLocation = Math.round(Math.random() * (23 - 0) + 0);
+            document.getElementById("tries").innerHTML = "Number of triesis zero";
+            distanceOfAnimal = "unknown"
+            document.getElementById("distance").innerHTML = "Distance is " + distanceOfAnimal;
+            for (var i = 0; i <= 23; i++) {
+                document.getElementById(a[i]).src = "tree.jpg";
+            }
+        }
+        
     </script>
 </head>
 
